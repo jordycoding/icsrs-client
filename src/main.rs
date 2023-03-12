@@ -17,14 +17,14 @@ struct Args {
 fn main() {
     let args = Args::parse();
 
-    let mut ics = Ics::new(&args.email, &args.password);
+    let mut ics = Ics::new(&args.email, &args.password, true);
 
     ics.login();
     // let devices = ics.get_devices();
     // println!("{:?}", devices);
     //
     // ics.turn_on(33500573);
-    ics.discover();
+    ics.get_entity_status(29023811);
 
     // let login_response = login(&args.email, &args.password);
     // let crypto = Crypto::new(login_response.homes[0].aes_key.to_string());
